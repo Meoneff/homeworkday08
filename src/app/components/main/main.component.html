@@ -1,0 +1,136 @@
+<div id="container">
+  <div id="left">
+  </div>
+  <div id="main">
+    <div id="navbar">
+      <a style="font-weight: bold;" href="">Today</a>
+      <a href="">Trend</a>
+      <a href="">Tumblr selection</a>
+      <a href="">Questions answers</a>
+    </div>
+    <div id="blog" *ngFor="let article of articleList$|async">
+      <div class="img_blog">
+        <div class="img_blog_box">
+          <img src="{{article.cover_image}}" alt="" style="object-fit: cover; width: 100%;">
+        </div>
+      </div>
+      <div class="content_blog">
+        <div class="avatar">
+          <img src="{{article.user.profile_image}}" alt="" style="width: 32px;height: 32px;border-radius: 50%;">
+          <div class="avatar_name_box">
+            <div class="avatar_name">
+              {{article.user.name}}
+            </div>
+            <div class="avatar_time" style="font-size: 12px;color: #525252;">
+              {{article.readable_publish_date}}
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="title">
+            {{article.title}}
+          </div>
+          <div class="share_welcome">
+            <div class="share_welcome_button" *ngFor="let tag of article.tag_list ">
+              <span>#</span>
+              <a href="" style="color: #3d3d3d;">{{tag}}</a>
+            </div>
+          </div>
+
+          <div class="content_interact">
+            <div style="display: flex;flex-direction: row;">
+              <div class="reaction_box">
+                <div class="reaction" *ngIf="article.public_reactions_count">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img"
+                    aria-labelledby="ah8k1kpnv0uwi703ulkm4ll5u723k00c" class="crayons-icon">
+                    <title id="ah8k1kpnv0uwi703ulkm4ll5u723k00c">Reactions</title>
+                    <path
+                      d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z">
+                    </path>
+                  </svg>
+                  <span>{{article.public_reactions_count}} reactions</span>
+                </div>
+              </div>
+              <div class="comment_box">
+                <div class="comment" *ngIf="article.comments_count">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img"
+                    aria-labelledby="alzpyalz4wlamqxc8aqtcet2ixmoyiqu" class="crayons-icon">
+                    <title id="alzpyalz4wlamqxc8aqtcet2ixmoyiqu">Comments</title>
+                    <path
+                      d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z">
+                    </path>
+                  </svg>
+                  <span>{{article.comments_count}} comments</span>
+                </div>
+              </div>
+              <div class="comment_box">
+                <div class="comment" *ngIf="article.comments_count==0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img"
+                    aria-labelledby="alzpyalz4wlamqxc8aqtcet2ixmoyiqu" class="crayons-icon">
+                    <title id="alzpyalz4wlamqxc8aqtcet2ixmoyiqu">Comments</title>
+                    <path
+                      d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z">
+                    </path>
+                  </svg>
+                  <span>Add comments</span>
+                </div>
+              </div>
+            </div>
+            <div class="content_time_box">
+              <div class="content_time">{{article.reading_time_minutes}} min read</div>
+              <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="bookmark_border"></mat-icon>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="right">
+    <div id="supright">
+      <div id="mainright">
+        <div class="topright">
+          Trengding Blogs
+        </div>
+        <div class="allfirst">
+          <div class="onetopright">
+            #New
+          </div>
+          <div class="all_tst" style=" display: flex; justify-content: center; flex-direction: column; margin-top: 10px;">
+            <a style="margin-top: 5px;">
+              . Domain Driven Design trong phát triển phần mềm
+            </a>
+            <a style="margin-top: 10px; border-bottom: 1px solid gray;">
+              .🔥CUỘC THI GOOGLE KICK START🔥
+            </a>
+          </div>
+          <div class="onetopright" style="margin-top: 10px;">
+            #Technologies
+          </div>
+          <div class="all_tst" style=" display: flex; justify-content: center; flex-direction: column; margin-top: 10px;">
+            <a style="margin-top: 5px;">
+              . Sinh Viên IT cần những gì
+            </a>
+            <a style="margin-top: 10px; margin-bottom: 10px;">
+              . Giới thiệu sơ về lập trình viên 
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <!-- <div id="center_right">
+      <div class="contact" >
+        <a href="https://www.facebook.com/" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" data-name="Layer 1" viewBox="0 0 24 24" id="facebook">
+            <path d="M15.12,5.32H17V2.14A26.11,26.11,0,0,0,14.26,2C11.54,2,9.68,3.66,9.68,6.7V9.32H6.61v3.56H9.68V22h3.68V12.88h3.06l.46-3.56H13.36V7.05C13.36,6,13.64,5.32,15.12,5.32Z"></path>
+          </svg>
+          <span>Facebook</span>
+        </a>
+        <a href="https://discord.gg/TB6SBeK8TZ" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 33.867 33.867" id="discord"><path d="M11.343 5.177c-1.076 0-4.32 1.316-4.902 1.579-.582.263-1.228 1.084-1.961 2.439-.734 1.355-1.323 2.939-2.28 5.269-.956 2.33-1.179 6.822-1.147 8.193.032 1.371.189 2.442 1.594 3.253 1.404.81 2.646 1.658 3.953 2.168 1.308.51 2.2.877 2.806.367.606-.51 1.005-1.403 1.005-1.403s.574-.797-.51-1.275c-1.084-.479-1.626-.814-1.579-1.308.048-.494.127-.765.398-.701.271.064.91 1.211 3.365 1.737s4.848.447 4.848.447 2.394.08 4.849-.447c2.455-.526 3.093-1.673 3.364-1.737.271-.064.35.207.398.7.048.495-.494.83-1.578 1.309-1.084.478-.51 1.275-.51 1.275s.399.892 1.005 1.403c.605.51 1.498.143 2.805-.367 1.307-.51 2.55-1.357 3.954-2.168 1.405-.811 1.562-1.882 1.594-3.253.032-1.37-.191-5.863-1.148-8.193-.956-2.33-1.546-3.914-2.28-5.269-.732-1.355-1.379-2.176-1.96-2.44-.582-.262-3.827-1.578-4.903-1.578-1.076 0-1.394.75-1.394.75l-.375.829s-2.52-.479-3.804-.48c-1.284 0-3.837.48-3.837.48l-.375-.83s-.318-.749-1.395-.749zm.117 9.948h.04c1.569 0 2.84 1.373 2.84 3.066 0 1.694-1.271 3.066-2.84 3.066s-2.84-1.372-2.84-3.066c-.001-1.677 1.247-3.043 2.8-3.066zm10.907 0h.04c1.553.023 2.8 1.39 2.8 3.066 0 1.694-1.271 3.066-2.84 3.066-1.57 0-2.84-1.372-2.84-3.066 0-1.693 1.27-3.066 2.84-3.066z" paint-order="fill markers stroke"></path></svg>
+      </a>
+      </div>
+    </div> -->
+  </div>
+</div>

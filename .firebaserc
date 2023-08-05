@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "appweb-5aa4a": {
+      "hosting": {
+        "runway": [
+          "appweb-5aa4a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "appweb-5aa4a"
+  }
+}
